@@ -21,6 +21,28 @@ body
   background-color: $main-color
   color: #fff
 
+.form
+  &__point
+    display: flex
+    align-items: center
+  &__radio
+    display: none
+  &__label
+    position: relative
+    padding-left: 40px
+    &::before
+      content: ''
+      display: inline-block
+      position: absolute
+      top: -5px
+      left: 0
+      width: 25px
+      height: 25px
+      background: url('../img/booking/radio-off.svg') 0 0 no-repeat
+
+.form__radio:checked + .form__label::before
+  background: url('../img/booking/radio-on.svg') 0 0 no-repeat
+
 @media (min-width: 769px)
   .btn
     &:hover
