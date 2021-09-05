@@ -1,0 +1,28 @@
+*
+  box-sizing: border-box
+
+img
+  max-width: 100%
+
+body
+  background-color: #222831
+  +main_reg
+
+.container
+  max-width: 1240px
+  margin: auto
+
+.btn
+  +main_bold
+  padding: 17px 50px
+  background-color: 
+  border: none
+  border-radius: 40px
+  background-color: $main-color
+  color: #fff
+
+@media (min-width: 769px)
+  .btn
+    &:hover
+      cursor: pointer
+  
