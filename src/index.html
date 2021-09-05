@@ -58,5 +58,64 @@
     <!-- /.container -->
   </header>
   <!-- /.header -->
+  <main class="main">
+    <section class="section booking">
+      <div class="container">
+        <div class="booking__panel">
+          <ul class="booking__tabs">
+            <li class="booking__item">Stays</li>
+            <!-- /.booking__item -->
+            <li class="booking__item tab_active">Flight</li>
+            <!-- /.booking__item -->
+            <li class="booking__item">Cars</li>
+            <!-- /.booking__item -->
+            <li class="booking__item">Packages</li>
+            <!-- /.booking__item -->
+            <li class="booking__item">Things to do</li>
+            <!-- /.booking__item -->
+          </ul>
+          <!-- /.booking__tabs -->
+          <form action="#" class="form booking__form">
+            <div class="booking__options">
+              <div class="booking__points">
+                <input type="radio" name="One-way" id="oneWay" class="form__radio booking__radio"> <label for="oneWay" class="label booking__label">One-way</label>
+                <input type="radio" name="Return" id="return" class="form__radio booking__radio"> <label for="return" class="label booking__label">Return</label>
+                <input type="radio" name="Multi-city" id="multiCity" class="form__radio booking__radio"> <label for="multiCity" class="label booking__label">Multy-city</label>
+              </div>
+              <div class="booking__type">
+                <select name="travellerList" id="traveller" class="form__select">
+                  <option value="1 traveller">1 traveller</option>
+                  <option value="2 traveller">2 traveller</option>
+                  <option value="3 traveller">3 traveller</option>
+                  <option value="4 traveller">4 traveller</option>
+                </select>
+                <select name="classList" id="flightClass" class="form__select">
+                  <option value="economy">economy</option>
+                  <option value="standart">standart</option>
+                  <option value="business">business</option>
+                </select>
+              </div>
+              <!-- /.booking__type -->
+              <div class="booking__details">
+                <input type="text" name="flightFrom" id="flightFrom" class="form__input">
+                <button class="form__btn"></button>
+                <input type="text" name="flightTo" id="flightTo" class="form__input">
+                <input type="date" name="departingDate" id="departingDate" class="form__input">
+                <input type="date" name="returningDate" id="returningDate" class="form__input">
+              </div>
+              <!-- /.booking__details -->
+              <button type="submit" class="btn booking__btn">Search</button>
+            </div>
+            <!-- /.booking__options -->
+          </form>
+          <!-- /.form booking__form --> 
+        </div>
+        <!-- /.booking__panel -->
+      </div>
+      <!-- /.container -->
+    </section>
+    <!-- /.section booking -->
+  </main>
+  <!-- /.main -->
 </body>
 </html>

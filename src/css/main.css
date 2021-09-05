@@ -501,4 +501,71 @@ body {
     font-weight: 700;
   }
 }
+
+.booking__panel {
+  background-color: #fff;
+  border-radius: 30px;
+  padding: 25px 45px;
+}
+
+.booking__tabs {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  position: relative;
+  margin-bottom: 50px;
+}
+
+.booking__tabs::after {
+  position: absolute;
+  bottom: -15px;
+  left: 0;
+  content: '';
+  display: block;
+  width: 100%;
+  height: 1px;
+  background: -webkit-gradient(linear, left top, right top, from(#888AA2), to(#fff));
+  background: linear-gradient(to right, #888AA2, #fff 100%);
+}
+
+.booking__item {
+  margin-right: 50px;
+  color: #888AA2;
+  font-family: 'Montserrat SemiBold', sans-serif;
+  font-weight: 600;
+}
+
+.booking__item:last-child {
+  margin-right: 0;
+}
+
+.tab_active {
+  position: relative;
+  color: #1F4AA8;
+}
+
+.tab_active::after {
+  position: absolute;
+  left: 0;
+  bottom: -16px;
+  content: '';
+  display: block;
+  width: 100%;
+  height: 3px;
+  background-color: #1F4AA8;
+  z-index: 1;
+  border-radius: 1.5px;
+}
+
+@media (min-width: 769px) {
+  .booking__item {
+    cursor: pointer;
+  }
+}
 /*# sourceMappingURL=main.css.map */

@@ -1,0 +1,49 @@
+.booking
+  &__panel
+    background-color: #fff
+    border-radius: 30px
+    padding: 25px 45px
+  &__tabs
+    display: flex
+    align-items: center
+    margin: 0
+    padding: 0
+    list-style: none
+    position: relative
+    margin-bottom: 50px
+    &::after
+      position: absolute
+      bottom: -15px
+      left: 0
+      content: ''
+      display: block
+      width: 100%
+      height: 1px
+      background: linear-gradient(to right, $secondary, #fff 100%)
+  &__item
+    margin-right: 50px
+    color: $secondary
+    +main_semibold
+    &:last-child
+      margin-right: 0
+
+.tab
+  &_active
+    position: relative
+    color: $main-color
+    &::after
+      position: absolute
+      left: 0
+      bottom: -16px
+      content: ''
+      display: block
+      width: 100%
+      height: 3px
+      background-color: $main-color
+      z-index: 1
+      border-radius: 1.5px
+
+@media (min-width: 769px)
+  .booking
+    &__item
+      cursor: pointer
