@@ -401,6 +401,10 @@ body {
   font-weight: 400;
 }
 
+input {
+  outline: none;
+}
+
 .container {
   max-width: 1240px;
   margin: auto;
@@ -443,6 +447,32 @@ body {
   width: 25px;
   height: 25px;
   background: url("../img/booking/radio-off.svg") 0 0 no-repeat;
+}
+
+.form__select {
+  margin-right: 25px;
+  border: none;
+  color: #1F4AA8;
+  font-family: 'Montserrat Regular', sans-serif;
+  font-weight: 400;
+}
+
+.form__select:last-child {
+  margin-right: 0;
+}
+
+.form__select:focus {
+  outline: none;
+}
+
+.form__option {
+  border: none;
+}
+
+.form__input {
+  padding: 12px 64px;
+  border: 0.5px solid #888AA2;
+  border-radius: 10px;
 }
 
 .form__radio:checked + .form__label::before {
@@ -595,6 +625,19 @@ body {
   margin-right: 60px;
 }
 
+.booking__flight {
+  font-size: 16px;
+}
+
+.booking__flight_from {
+  margin-right: 9px;
+  background: url("../img/booking/fly-from.svg") 15px center no-repeat;
+}
+
+.booking__flight_to {
+  background: url("../img/booking/fly-to.svg") 15px center no-repeat;
+}
+
 .tab_active {
   position: relative;
   color: #1F4AA8;
@@ -611,26 +654,6 @@ body {
   background-color: #1F4AA8;
   z-index: 1;
   border-radius: 1.5px;
-}
-
-.form__select {
-  margin-right: 25px;
-  border: none;
-  color: #1F4AA8;
-  font-family: 'Montserrat Regular', sans-serif;
-  font-weight: 400;
-}
-
-.form__select:last-child {
-  margin-right: 0;
-}
-
-.form__select:focus {
-  outline: none;
-}
-
-.form__option {
-  border: none;
 }
 
 @media (min-width: 769px) {

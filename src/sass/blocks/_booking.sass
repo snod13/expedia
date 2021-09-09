@@ -33,6 +33,13 @@
     margin-bottom: 20px
   &__label
     margin-right: 60px
+  &__flight
+    font-size: 16px
+    &_from
+      margin-right: 9px
+      background: url('../img/booking/fly-from.svg') 15px center no-repeat
+    &_to
+      background: url('../img/booking/fly-to.svg') 15px center no-repeat
 
 .tab
   &_active
@@ -49,19 +56,6 @@
       background-color: $main-color
       z-index: 1
       border-radius: 1.5px
-
-.form
-  &__select
-    margin-right: 25px
-    border: none
-    color: $main-color
-    +main_reg
-    &:last-child
-      margin-right: 0
-    &:focus
-      outline: none
-  &__option
-    border: none
 
 @media (min-width: 769px)
   .booking
