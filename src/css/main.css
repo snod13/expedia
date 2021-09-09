@@ -613,6 +613,26 @@ body {
   border-radius: 1.5px;
 }
 
+.form__select {
+  margin-right: 25px;
+  border: none;
+  color: #1F4AA8;
+  font-family: 'Montserrat Regular', sans-serif;
+  font-weight: 400;
+}
+
+.form__select:last-child {
+  margin-right: 0;
+}
+
+.form__select:focus {
+  outline: none;
+}
+
+.form__option {
+  border: none;
+}
+
 @media (min-width: 769px) {
   .booking__item {
     cursor: pointer;

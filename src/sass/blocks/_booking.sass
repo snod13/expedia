@@ -50,6 +50,19 @@
       z-index: 1
       border-radius: 1.5px
 
+.form
+  &__select
+    margin-right: 25px
+    border: none
+    color: $main-color
+    +main_reg
+    &:last-child
+      margin-right: 0
+    &:focus
+      outline: none
+  &__option
+    border: none
+
 @media (min-width: 769px)
   .booking
     &__item
