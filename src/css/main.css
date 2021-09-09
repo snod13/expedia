@@ -471,7 +471,7 @@ input {
 
 .form__input {
   padding: 12px 64px;
-  border: 0.5px solid #888AA2;
+  border: .5px solid #000;
   border-radius: 10px;
 }
 
@@ -625,7 +625,30 @@ input {
   margin-right: 60px;
 }
 
+.booking__details {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin-bottom: 18px;
+}
+
+.booking__flights {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
 .booking__flight {
+  width: 360px;
   font-size: 16px;
 }
 
@@ -635,7 +658,74 @@ input {
 }
 
 .booking__flight_to {
+  margin-right: 15px;
   background: url("../img/booking/fly-to.svg") 15px center no-repeat;
+}
+
+.booking__change-btn {
+  width: 37px;
+  height: 37px;
+  padding: 9px;
+  border: 1px solid #000;
+  border-radius: 50%;
+  margin-right: 9px;
+  background-color: #fff;
+}
+
+.booking__date {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  border: .5px solid #000;
+  border-radius: 10px;
+  padding: 7px 50px 7px 15px;
+  width: 175px;
+}
+
+.booking__dates {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.booking__departing {
+  margin-right: 8px;
+}
+
+.booking__description span {
+  display: block;
+}
+
+.booking__img {
+  margin-right: 15px;
+}
+
+.booking__img img {
+  display: block;
+}
+
+.booking__name {
+  margin-bottom: 4px;
+  font-size: 11px;
+  font-family: 'Montserrat Regular', sans-serif;
+  font-weight: 400;
+}
+
+.booking__day {
+  font-size: 13px;
+  font-family: 'Montserrat Regular', sans-serif;
+  font-weight: 400;
+}
+
+.booking__search-btn {
+  display: block;
+  margin: auto;
 }
 
 .tab_active {
@@ -658,6 +748,12 @@ input {
 
 @media (min-width: 769px) {
   .booking__item {
+    cursor: pointer;
+  }
+  .booking__date {
+    cursor: pointer;
+  }
+  .booking__change-btn {
     cursor: pointer;
   }
 }
