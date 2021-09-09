@@ -1,3 +1,4 @@
+@charset "UTF-8";
 /*! normalize.css v8.0.1 | MIT License | github.com/necolas/normalize.css */
 /* Document
    ========================================================================== */
@@ -386,6 +387,28 @@ template {
   font-display: swap;
 }
 
+@-webkit-keyframes pullDown {
+  0% {
+    -webkit-transform: scaleY(0.1);
+            transform: scaleY(0.1);
+  }
+  100% {
+    -webkit-transform: scaleY(1);
+            transform: scaleY(1);
+  }
+}
+
+@keyframes pullDown {
+  0% {
+    -webkit-transform: scaleY(0.1);
+            transform: scaleY(0.1);
+  }
+  100% {
+    -webkit-transform: scaleY(1);
+            transform: scaleY(1);
+  }
+}
+
 * {
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
@@ -477,6 +500,21 @@ input {
 
 .form__radio:checked + .form__label::before {
   background: url("../img/booking/radio-on.svg") 0 0 no-repeat;
+}
+
+.hide {
+  display: none;
+}
+
+.show {
+  display: block;
+}
+
+.animated {
+  -webkit-animation: pullDown 0.5s ease-out 1 forwards;
+          animation: pullDown 0.5s ease-out 1 forwards;
+  -webkit-transform-origin: 50% 0%;
+          transform-origin: 50% 0%;
 }
 
 @media (min-width: 769px) {
@@ -746,6 +784,116 @@ input {
   border-radius: 1.5px;
 }
 
+.month-calendar {
+  width: 100%;
+  margin-bottom: 15px;
+  -webkit-transition: 3s;
+  transition: 3s;
+  -webkit-transform: scaleY(0.1);
+          transform: scaleY(0.1);
+}
+
+.month {
+  margin: 0;
+  padding: 20px;
+  background: #1F4AA8;
+  text-align: center;
+  width: 100%;
+  color: #ffffff;
+  list-style: none;
+  border-radius: 10px 10px 0 0;
+}
+
+.month li {
+  padding: 0;
+  margin: 0;
+  font-size: 18px;
+  text-transform: uppercase;
+  font-family: 'Montserrat SemiBold', sans-serif;
+  font-weight: 600;
+}
+
+.month li.prev,
+.month li.next {
+  cursor: pointer;
+}
+
+.month li.prev {
+  float: left;
+}
+
+.month li.next {
+  float: right;
+}
+
+.month li.year-name {
+  font-size: 16px;
+  font-family: 'Montserrat Regular', sans-serif;
+  font-weight: 400;
+}
+
+/* дни недели */
+.weekdays {
+  margin: 0;
+  padding: 15px 0;
+  background-color: #dddddd;
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: left;
+      -ms-flex-pack: left;
+          justify-content: left;
+}
+
+.weekdays li {
+  display: inline-block;
+  -webkit-box-flex: 0;
+      -ms-flex: 0 0 calc(100% / 7);
+          flex: 0 0 calc(100% / 7);
+  text-align: center;
+}
+
+/* дни */
+.days {
+  margin: 0;
+  padding: 1rem 0;
+  background-color: #eeeeee;
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-pack: left;
+      -ms-flex-pack: left;
+          justify-content: left;
+  -ms-flex-line-pack: start;
+      align-content: flex-start;
+  height: 100%;
+  border-radius: 0 0 10px 10px;
+}
+
+.days li {
+  padding: 8px;
+  list-style: none;
+  display: inline-block;
+  -webkit-box-flex: 0;
+      -ms-flex: 0 0 calc(100% / 7);
+          flex: 0 0 calc(100% / 7);
+  text-align: center;
+  color: #888AA2;
+  font-size: 0.9rem;
+  line-height: 1rem;
+  cursor: pointer;
+}
+
+.days li.date-now {
+  background-color: #275dd3;
+  color: #fff;
+  font-weight: 700;
+}
+
 @media (min-width: 769px) {
   .booking__item {
     cursor: pointer;
@@ -755,6 +903,10 @@ input {
   }
   .booking__change-btn {
     cursor: pointer;
+  }
+  .days li:hover {
+    background-color: #7a9ce6;
+    color: #fff;
   }
 }
 /*# sourceMappingURL=main.css.map */

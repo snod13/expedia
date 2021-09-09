@@ -106,6 +106,76 @@
       z-index: 1
       border-radius: 1.5px
 
+.month-calendar
+    width: 100%
+    margin-bottom: 15px
+    transition: 3s
+    transform: scaleY(0.1)
+.month
+    margin: 0
+    padding: 20px
+    background: $main-color
+    text-align: center
+    width: 100%
+    color: #ffffff
+    list-style: none
+    border-radius: 10px 10px 0 0
+.month li
+    padding: 0
+    margin: 0
+    font-size: 18px
+    text-transform: uppercase
+    +main_semibold
+.month li.prev,
+.month li.next
+    cursor: pointer
+.month li.prev
+    float: left
+.month li.next
+    float: right
+.month li.year-name
+    font-size: 16px
+    +main_reg
+/* дни недели */
+.weekdays
+    margin: 0
+    padding: 15px 0
+    background-color: #dddddd
+    width: 100%
+    display: flex
+    justify-content: left
+.weekdays li
+    display: inline-block
+    flex: 0 0 calc(100% / 7)
+    text-align: center
+/* дни */
+.days
+    margin: 0
+    padding: 1rem 0
+    background-color: #eeeeee
+    width: 100%
+    display: flex
+    flex-wrap: wrap
+    justify-content: left
+    align-content: flex-start
+    height: 100%
+    border-radius: 0 0 10px 10px
+.days li
+    padding: 8px
+    list-style: none
+    display: inline-block
+    flex: 0 0 calc(100% / 7)
+    text-align: center
+    color: $secondary
+    font-size: 0.9rem
+    line-height: 1rem
+    cursor: pointer
+.days li.date-now
+    background-color: lighten($main-color, 10%)
+    color: #fff
+    font-weight: 700
+
+
 @media (min-width: 769px)
   .booking
     &__item
@@ -115,3 +185,6 @@
     &__change
       &-btn
         cursor: pointer
+  .days li:hover
+    background-color: lighten($main-color, 30%)
+    color: #fff
