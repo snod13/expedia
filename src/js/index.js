@@ -25,9 +25,9 @@ window.addEventListener('DOMContentLoaded', () => {
         monthPrefix = new Date(year, month, 0).getDay(),
         monthDaysText = '';
 
-      monthContainer.textContent = monthName[month];
-      yearContainer.textContent = year;
-      daysContainer.innerHTML = '';
+        monthContainer.textContent = monthName[month];
+        yearContainer.textContent = year;
+        daysContainer.innerHTML = '';
 
       if (monthPrefix > 0) {
         for (let i = 1; i <= monthPrefix; i++) {
@@ -80,7 +80,7 @@ window.addEventListener('DOMContentLoaded', () => {
 
   //Работа с календарем
   const nameElemDepart = '[data-calendar="departing"]',
-        nameElemReturn = '[data-calendar="returning"',
+        nameElemReturn = '[data-calendar="returning"]',
         nameDaysDepart = '[data-days="departing"]',
         nameDaysReturn = '[data-days="returning"]',
         calendarDepart = document.querySelector(nameElemDepart),
@@ -96,50 +96,55 @@ window.addEventListener('DOMContentLoaded', () => {
   createCalendar(nameElemReturn, nameDaysReturn);
 
   fieldDepart.addEventListener('click', (e) => {
-    if (e.target) {
-      changeVisibleCalendar(calendarReturn, calendarDepart);
-    }
+    changeVisibleCalendar(e.target, calendarReturn, calendarDepart);
   });
 
   fieldReturn.addEventListener('click', (e) => {
-    if (e.target) {
-      changeVisibleCalendar(calendarDepart, calendarReturn);
-    }
+    changeVisibleCalendar(e.target, calendarDepart, calendarReturn);
   });
 
-  function changeVisibleCalendar(calendarHide, calendarShow) {
-    calendarHide.classList.remove('animated');
-    calendarShow.classList.add('animated');
-    calendarHide.classList.remove('show');
-    calendarHide.classList.add('hide');
-    calendarShow.classList.remove('hide');
-    calendarShow.classList.add('show');
-  }
-
   daysContainerDepart.addEventListener('click', (e) => {
-    if (e.target && !e.target.matches('ul.days')) {
-      departDay.textContent = `${e.target.textContent} ${monthContainerDepart.textContent.slice('' , 3)}`;
-
-      let curDay = daysContainerDepart.querySelector('.date-now');
-      if(curDay) {
-        curDay.classList.remove('date-now');
-      }
-      e.target.classList.add('date-now'); 
-    }
+    rewriteDate(departDay, e.target, monthContainerDepart, daysContainerDepart);
   });
 
   daysContainerReturn.addEventListener('click', (e) => {
-    if (e.target && !e.target.matches('ul.days')) {
-      returnDay.textContent = `${e.target.textContent} ${monthContainerReturn.textContent.slice('' , 3)}`;
+    rewriteDate(returnDay, e.target, monthContainerReturn, daysContainerReturn);
+  });
 
-      let curDay = daysContainerReturn.querySelector('.date-now');
+  function changeVisibleCalendar(target, calendarHide, calendarShow) {
+    if (target) {
+      calendarHide.classList.remove('animated');
+      calendarShow.classList.add('animated');
+      calendarHide.classList.remove('show');
+      calendarHide.classList.add('hide');
+      calendarShow.classList.remove('hide');
+      calendarShow.classList.add('show');
+    }
+  }
+
+  function rewriteDate(dateField, eTarget, monthContainer, daysContainer) {
+    if (eTarget && !eTarget.matches('ul.days')) {
+
+      dateField.textContent = `${eTarget.textContent} ${monthContainer.textContent.slice('' , 3)}`;
+
+      let curDay = daysContainer.querySelector('.date-now');
       if(curDay) {
         curDay.classList.remove('date-now');
       }
-      e.target.classList.add('date-now');
-    }
-  });
+      eTarget.classList.add('date-now');
 
+      if (dateField.matches('span[data-departingDay]')) {
+        window.localStorage.setItem('departingDay', eTarget.textContent);
+        window.localStorage.setItem('departingMonth', monthContainer.textContent);
+      }
+      if (dateField.matches('span[data-returningDay]')) {
+        window.localStorage.setItem('returningDay', eTarget.textContent);
+        window.localStorage.setItem('returningMonth', monthContainer.textContent);
+      }
+    }
+  }
+
+  //Закрытие окна
   window.addEventListener('beforeunload', (e) => {
     e.preventDefault();
     e.returnValue = '';
