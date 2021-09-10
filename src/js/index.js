@@ -41,9 +41,31 @@ window.addEventListener('DOMContentLoaded', () => {
 
       daysContainer.innerHTML = monthDaysText;
 
-      if (month == nowMonth && year == nowYear) {
-        let days = daysContainer.getElementsByTagName('li');
-        days[monthPrefix + nowDateNumber - 1].classList.add('date-now');
+      if (containerCalendar.getAttribute('data-calendar') == 'departing') {
+        if (window.localStorage.getItem('departingMonth')) {
+          if(monthContainer.textContent == window.localStorage.getItem('departingMonth')){
+            let days = daysContainer.getElementsByTagName('li');
+            days[monthPrefix + Number(window.localStorage.getItem('departingDay')) - 1].classList.add('date-now');
+          }
+        } else {
+          if (month == nowMonth && year == nowYear) {
+            let days = daysContainer.getElementsByTagName('li');
+            days[monthPrefix + nowDateNumber - 1].classList.add('date-now');
+          }
+        }
+      }
+      if (containerCalendar.getAttribute('data-calendar') == 'returning') {
+        if (window.localStorage.getItem('returningMonth')) {
+          if(monthContainer.textContent == window.localStorage.getItem('returningMonth')){
+            let days = daysContainer.getElementsByTagName('li');
+            days[monthPrefix + Number(window.localStorage.getItem('returningDay')) - 1].classList.add('date-now');
+          }
+        } else {
+          if (month == nowMonth && year == nowYear) {
+            let days = daysContainer.getElementsByTagName('li');
+            days[monthPrefix + nowDateNumber + 14 - 1].classList.add('date-now');
+          }
+        }
       }
     }
 
