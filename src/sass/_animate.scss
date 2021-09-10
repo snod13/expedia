@@ -1,8 +1,13 @@
 @keyframes pullDown {
   0% {
-      transform: scaleY(0.1);
+    transform: scaleY(1);
   }
+
+  50%{
+    transform: scaleY(0.1);
+  }
+
   100% {
-      transform: scaleY(1);
-  }                           
+    transform: scaleY(1);
+  }
 }

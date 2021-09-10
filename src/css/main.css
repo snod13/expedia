@@ -389,6 +389,10 @@ template {
 
 @-webkit-keyframes pullDown {
   0% {
+    -webkit-transform: scaleY(1);
+            transform: scaleY(1);
+  }
+  50% {
     -webkit-transform: scaleY(0.1);
             transform: scaleY(0.1);
   }
@@ -400,6 +404,10 @@ template {
 
 @keyframes pullDown {
   0% {
+    -webkit-transform: scaleY(1);
+            transform: scaleY(1);
+  }
+  50% {
     -webkit-transform: scaleY(0.1);
             transform: scaleY(0.1);
   }
