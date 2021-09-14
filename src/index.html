@@ -63,15 +63,15 @@
       <div class="container">
         <div class="booking__panel">
           <ul class="booking__tabs">
-            <li class="booking__item">Stays</li>
+            <li class="booking__item" data-panel="stays">Stays</li>
             <!-- /.booking__item -->
-            <li class="booking__item tab_active">Flight</li>
+            <li class="booking__item tab_active" data-panel="flight">Flight</li>
             <!-- /.booking__item -->
-            <li class="booking__item">Cars</li>
+            <li class="booking__item" data-panel="cars">Cars</li>
             <!-- /.booking__item -->
-            <li class="booking__item">Packages</li>
+            <li class="booking__item" data-panel="packages">Packages</li>
             <!-- /.booking__item -->
-            <li class="booking__item">Things to do</li>
+            <li class="booking__item" data-panel="thingsToDo">Things to do</li>
             <!-- /.booking__item -->
           </ul>
           <!-- /.booking__tabs -->
@@ -79,7 +79,7 @@
             <div class="booking__options">
               <div class="booking__points">
                   <input type="radio" name="radio" id="oneWay" class="form__radio booking__radio"> <label for="oneWay" class="form__label booking__label">One-way</label>
-                  <input type="radio" name="radio" id="return" class="form__radio booking__radio"> <label for="return" class="form__label booking__label">Return</label>
+                  <input type="radio" name="radio" id="return" class="form__radio booking__radio" checked> <label for="return" class="form__label booking__label">Return</label>
                   <input type="radio" name="radio" id="multiCity" class="form__radio booking__radio"> <label for="multiCity" class="form__label booking__label">Multy-city</label>
               </div>
               <div class="booking__type">

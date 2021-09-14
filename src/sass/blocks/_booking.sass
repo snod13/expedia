@@ -94,6 +94,7 @@
   &_active
     position: relative
     color: $main-color
+    transition: 0.5s
     &::after
       position: absolute
       left: 0
@@ -105,6 +106,8 @@
       background-color: $main-color
       z-index: 1
       border-radius: 1.5px
+      transition: 0.5s
+      animation: moveRight 0.5s ease-out 1 forwards
 
 .month-calendar
     width: 100%
@@ -185,6 +188,8 @@
     &__change
       &-btn
         cursor: pointer
+    &__label
+      cursor: pointer
   .days li:hover
     background-color: lighten($main-color, 30%)
     color: #fff

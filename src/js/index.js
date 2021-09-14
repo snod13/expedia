@@ -172,4 +172,15 @@ window.addEventListener('DOMContentLoaded', () => {
     e.returnValue = '';
     window.localStorage.clear();
   });
+
+  //Таб панель
+  const tab = document.querySelector('.booking__tabs');
+
+  tab.addEventListener('click', (e) => {
+    if(e.target && e.target.matches('li.booking__item')) {
+      let prevTab = tab.querySelector('.tab_active');
+      prevTab.classList.remove('tab_active');
+      e.target.classList.add('tab_active');
+    }
+  });
 });

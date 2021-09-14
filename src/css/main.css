@@ -417,6 +417,24 @@ template {
   }
 }
 
+@-webkit-keyframes moveRight {
+  0% {
+    width: 0%;
+  }
+  100% {
+    width: 100%;
+  }
+}
+
+@keyframes moveRight {
+  0% {
+    width: 0%;
+  }
+  100% {
+    width: 100%;
+  }
+}
+
 * {
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
@@ -777,6 +795,8 @@ input {
 .tab_active {
   position: relative;
   color: #1F4AA8;
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
 }
 
 .tab_active::after {
@@ -790,6 +810,10 @@ input {
   background-color: #1F4AA8;
   z-index: 1;
   border-radius: 1.5px;
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
+  -webkit-animation: moveRight 0.5s ease-out 1 forwards;
+          animation: moveRight 0.5s ease-out 1 forwards;
 }
 
 .month-calendar {
@@ -910,6 +934,9 @@ input {
     cursor: pointer;
   }
   .booking__change-btn {
+    cursor: pointer;
+  }
+  .booking__label {
     cursor: pointer;
   }
   .days li:hover {
