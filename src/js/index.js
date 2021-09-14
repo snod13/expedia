@@ -183,4 +183,19 @@ window.addEventListener('DOMContentLoaded', () => {
       e.target.classList.add('tab_active');
     }
   });
+
+  //Радио кнопки
+  const radio = document.querySelector('.booking__points');
+
+  radio.addEventListener('change', (e) => {
+    if(e.target && !e.target.matches('div.booking__points')) {
+      let returnDate = document.querySelector('.booking__returning');
+      if(e.target.getAttribute('data-point') == 'oneWay') {
+        returnDate.style.display = 'none';
+      }
+      else {
+        returnDate.style.display = 'flex';
+      }
+    }
+  });
 });
