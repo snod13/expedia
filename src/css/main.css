@@ -631,6 +631,7 @@ input {
 
 .booking {
   position: relative;
+  padding-bottom: 315px;
 }
 
 .booking__panel {
@@ -949,5 +950,42 @@ input {
     background-color: #7a9ce6;
     color: #fff;
   }
+}
+
+.destination__view {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: (auto)[3];
+      grid-template-columns: repeat(3, auto);
+  grid-auto-rows: minmax(580px, auto);
+}
+
+.destination__grid {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: (auto)[2];
+      grid-template-columns: repeat(2, auto);
+  grid-auto-rows: minmax(273px, 2fr);
+  grid-column-gap: 12px;
+  grid-row-gap: 34px;
+}
+
+.destination__item img {
+  display: block;
+}
+
+.destination__item1 {
+  -ms-grid-column: 1;
+      grid-column-start: 1;
+  grid-column-end: 3;
+  -ms-grid-row: 1;
+      grid-row-start: 1;
+  grid-row-end: 2;
+}
+
+.destination__item2 {
+  -ms-grid-row: 2;
+      grid-row-start: 2;
+  grid-row-end: 3;
 }
 /*# sourceMappingURL=main.css.map */
