@@ -63,7 +63,12 @@ window.addEventListener('DOMContentLoaded', () => {
         } else {
           if (month == nowMonth && year == nowYear) {
             let days = daysContainer.getElementsByTagName('li');
-            days[monthPrefix + nowDateNumber + 14 - 1].classList.add('date-now');
+            try {
+              days[monthPrefix + nowDateNumber + 14 - 1].classList.add('date-now');
+            } 
+            catch (e) {
+              days[monthPrefix + nowDateNumber - 1].classList.add('date-now');
+            }
           }
         }
       }
@@ -96,8 +101,12 @@ window.addEventListener('DOMContentLoaded', () => {
     let today = new Date(curDate),
         retDate = new Date(today.setDate(today.getDate() + 14));
 
-    departDay.textContent = `${nowDateNumber} ${monthContainer.textContent.slice('' , 3)}`;
-    returnDay.textContent = `${retDate.getDate()} ${monthContainer.textContent.slice('' , 3)}`;
+    departDay.textContent = `${nowDateNumber} ${monthContainer.textContent.slice('', 3)}`;
+    if (container == '[data-calendar="returning"]') {
+      monthContainer.textContent = monthName[retDate.getMonth() + 1];
+    }
+    returnDay.textContent = `${retDate.getDate()} ${monthContainer.textContent.slice('', 3)}`;
+    monthContainer.textContent = monthName[retDate.getMonth()];
   }
 
   //Работа с календарем

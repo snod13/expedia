@@ -629,10 +629,16 @@ input {
   }
 }
 
+.booking {
+  position: relative;
+}
+
 .booking__panel {
   background-color: #fff;
   border-radius: 30px;
   padding: 25px 45px;
+  position: absolute;
+  top: -60px;
 }
 
 .booking__tabs {
