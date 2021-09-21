@@ -648,6 +648,7 @@ input {
   padding: 25px 45px;
   position: absolute;
   top: -60px;
+  min-width: 1240px;
 }
 
 .booking__tabs {
@@ -1040,5 +1041,81 @@ input {
 
 .download__links {
   text-align: center;
+}
+
+.footer {
+  padding-top: 42px;
+  padding-bottom: 133px;
+  background-color: #133B5C;
+  color: #fff;
+}
+
+.footer__block {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.footer__item {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.footer__rights {
+  margin: 0;
+  max-width: 225px;
+  font-size: 13px;
+  line-height: 15.8px;
+  letter-spacing: 0.05em;
+}
+
+.footer__heading {
+  margin: 0;
+  margin-bottom: 14px;
+  font-size: 16px;
+  letter-spacing: 0.05em;
+  font-family: 'Montserrat Bold', sans-serif;
+  font-weight: 700;
+}
+
+.footer__link {
+  text-decoration: none;
+  color: #fff;
+  font-size: 13px;
+  letter-spacing: 0.05em;
+  margin-bottom: 13px;
+}
+
+.footer__link:last-child {
+  margin-bottom: 0;
+}
+
+.footer__social {
+  max-height: 24px;
+}
+
+.social__link {
+  display: inline-block;
+  margin-right: 30px;
+  margin-bottom: 0;
+}
+
+.social__link:last-child {
+  margin-right: 0;
+}
+
+.social__link img {
+  display: block;
 }
 /*# sourceMappingURL=main.css.map */
