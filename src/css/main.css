@@ -1012,4 +1012,33 @@ input {
       grid-column-start: 3;
   grid-column-end: 4;
 }
+
+.download {
+  margin-bottom: 120px;
+}
+
+.download__title {
+  max-width: 228px;
+  margin: auto;
+  margin-bottom: 30px;
+  text-align: center;
+}
+
+.download__link {
+  display: inline-block;
+  margin-right: 30px;
+}
+
+.download__link:last-child {
+  margin-right: 0;
+}
+
+.download__link img {
+  display: block;
+  border-radius: 11px;
+}
+
+.download__links {
+  text-align: center;
+}
 /*# sourceMappingURL=main.css.map */
