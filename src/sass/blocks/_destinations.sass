@@ -14,6 +14,7 @@
     grid-column-gap: 34px
     grid-row-gap: 34px
   &__item
+    position: relative
     img
       display: block
       border-radius: 16px
@@ -28,3 +29,18 @@
     &4
       grid-column-start: 3
       grid-column-end: 4
+  &__description
+    max-width: 215px
+    position: absolute
+    bottom: 25px
+    left: 30px
+  &__name
+    display: block
+    margin-bottom: 20px
+    font-size: 22px
+    +card_medium
+    color: #fff
+  &__location
+    font-size: 16px
+    +card_reg
+    color: #fff

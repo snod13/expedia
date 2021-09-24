@@ -988,6 +988,10 @@ input {
   grid-row-gap: 34px;
 }
 
+.destination__item {
+  position: relative;
+}
+
 .destination__item img {
   display: block;
   border-radius: 16px;
@@ -1012,6 +1016,29 @@ input {
   -ms-grid-column: 3;
       grid-column-start: 3;
   grid-column-end: 4;
+}
+
+.destination__description {
+  max-width: 215px;
+  position: absolute;
+  bottom: 25px;
+  left: 30px;
+}
+
+.destination__name {
+  display: block;
+  margin-bottom: 20px;
+  font-size: 22px;
+  font-family: 'Poppins Medium', sans-serif;
+  font-weight: 500;
+  color: #fff;
+}
+
+.destination__location {
+  font-size: 16px;
+  font-family: 'Poppins Regular', sans-serif;
+  font-weight: 400;
+  color: #fff;
 }
 
 .download {
