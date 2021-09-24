@@ -14,20 +14,6 @@ function minifyCss(){
       .pipe(dest('dist/css/'));
 }
 
-function minJS(){
-  return src(['src/js/*.js', '!src/js/*.min.js'])
-    .pipe(minScripts())
-    .pipe(renameFiles(function (path) {
-      path.extname = ".min.js";
-    }))
-    .pipe(dest('dist/js/'));
-}
-
-function moveMinJS(){
-  return src('src/js/*.min.js')
-    .pipe(dest('dist/js/'));
-}
-
 function htmlmin(){
   return src('src/*.html')
     .pipe(minHtml({ collapseWhitespace: true }))
@@ -47,4 +33,4 @@ function tinypng() {
   .pipe(dest('dist/img/'));
 }
 
-exports.build = parallel(minifyCss, minJS, moveMinJS, htmlmin, moveFonts, tinypng);
+exports.build = parallel(minifyCss, htmlmin, moveFonts, tinypng);
