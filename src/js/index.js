@@ -121,7 +121,9 @@ window.addEventListener('DOMContentLoaded', () => {
         fieldDepart = document.querySelector('.booking__departing'),
         fieldReturn = document.querySelector('.booking__returning'),
         monthContainerDepart = document.querySelector('[data-month="depart"]'),
-        monthContainerReturn = document.querySelector('[data-month="return"]');
+        monthContainerReturn = document.querySelector('[data-month="return"]'),
+        panelSection = document.querySelector('.booking'), 
+        panel = panelSection.querySelector('.booking__panel'); 
 
   createCalendar(nameElemDepart, nameDaysDepart);
   createCalendar(nameElemReturn, nameDaysReturn);
@@ -150,6 +152,7 @@ window.addEventListener('DOMContentLoaded', () => {
       calendarHide.classList.add('hide');
       calendarShow.classList.remove('hide');
       calendarShow.classList.add('show');
+      panelSection.style.height = `${panel.offsetHeight}px`;
     }
   }
 
